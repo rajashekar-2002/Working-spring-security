@@ -38,6 +38,7 @@ public class SpringSecurityConfiguration {
                                 .loginProcessingUrl("/login")
                                 .successHandler(new AuthenticationSuccessHandler())
                                 .permitAll())
+        .logout(logout->logout.logoutSuccessHandler(new CustomLogoutHandler()))
             
         .build();
 
