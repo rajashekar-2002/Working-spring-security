@@ -36,7 +36,9 @@ public class SpringSecurityConfiguration {
         .formLogin(formlogin->formlogin
                                 .loginPage("/login")
                                 .loginProcessingUrl("/login")
+                                .successHandler(new AuthenticationSuccessHandler())
                                 .permitAll())
+            
         .build();
 
 
