@@ -25,5 +25,10 @@ public class ContentController {
     return "custom_login";
   }
 
+//   @GetMapping("/logout")
+//   public String handleLogout() {
+//     return "custom_logout";
+//   }
+
 }
 

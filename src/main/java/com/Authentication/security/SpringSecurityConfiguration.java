@@ -33,7 +33,10 @@ public class SpringSecurityConfiguration {
         request.requestMatchers("/user/**").hasRole("USER");
         request.anyRequest().authenticated();
     })
-        .formLogin(formlogin->formlogin.permitAll())
+        .formLogin(formlogin->formlogin
+                                .loginPage("/login")
+                                .loginProcessingUrl("/login")
+                                .permitAll())
         .build();
 
 
