@@ -24,10 +24,11 @@ public class SpringSecurityConfiguration {
         request.requestMatchers("/home").permitAll();
         request.requestMatchers("/admin/**").hasRole("ADMIN");
         request.requestMatchers("/user/**").hasRole("USER");
-        request.anyRequest().authenticated();}).build();
-//this will not work 
-//we have overrided default settings 
-//other than these three request provided rest will not work 
+        request.anyRequest().authenticated();
+    })
+        .formLogin(formlogin->formlogin.permitAll())
+        .build();
+
 
     }
 
